@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34322.80
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAW-Exam.Server", "DAW-Exam.Server\DAW-Exam.Server.csproj", "{2889156D-85DC-4694-A13A-D238529617E9}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "daw-exam.client", "daw-exam.client\daw-exam.client.esproj", "{6748E664-F543-42CE-89C6-6EE6047D5AA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2889156D-85DC-4694-A13A-D238529617E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2889156D-85DC-4694-A13A-D238529617E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2889156D-85DC-4694-A13A-D238529617E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2889156D-85DC-4694-A13A-D238529617E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6748E664-F543-42CE-89C6-6EE6047D5AA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6748E664-F543-42CE-89C6-6EE6047D5AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6748E664-F543-42CE-89C6-6EE6047D5AA3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6748E664-F543-42CE-89C6-6EE6047D5AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6748E664-F543-42CE-89C6-6EE6047D5AA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6748E664-F543-42CE-89C6-6EE6047D5AA3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B326460-5E55-4C5E-BC85-9A7011631F5D}
+	EndGlobalSection
+EndGlobal
