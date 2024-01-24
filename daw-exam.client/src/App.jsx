@@ -2,30 +2,31 @@ import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
-    const [forecasts, setForecasts] = useState();
+    const [excavators, setExcavators] = useState();
 
     useEffect(() => {
-        populateWeatherData();
+        populateExcavatorData();
     }, []);
 
-    const contents = forecasts === undefined
+    const contents = excavators === undefined
         ? <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationreact">https://aka.ms/jspsintegrationreact</a> for more details.</em></p>
         : <table className="table table-striped" aria-labelledby="tabelLabel">
             <thead>
                 <tr>
-                    <th>Date</th>
-                    <th>Temp. (C)</th>
-                    <th>Temp. (F)</th>
-                    <th>Summary</th>
+                    <th>Model</th>
+                    <th>Manufacturer</th>
+                    <th>Year</th>
+                    <th>Weight</th>
+                    <th>Type</th>
                 </tr>
             </thead>
             <tbody>
-                {forecasts.map(forecast =>
-                    <tr key={forecast.date}>
-                        <td>{forecast.date}</td>
-                        <td>{forecast.temperatureC}</td>
-                        <td>{forecast.temperatureF}</td>
-                        <td>{forecast.summary}</td>
+                {excavators.map(excavator =>
+                    <tr key={excavator.model}>
+                        <td>{excavator.manufacturer}</td>
+                        <td>{excavator.yearOfFabrication}</td>
+                        <td>{excavator.weight}</td>
+                        <td>{excavator.excavatorType.type}</td>
                     </tr>
                 )}
             </tbody>
@@ -33,16 +34,16 @@ function App() {
 
     return (
         <div>
-            <h1 id="tabelLabel">Weather forecast</h1>
+            <h1 id="tabelLabel">Excavators</h1>
             <p>This component demonstrates fetching data from the server.</p>
             {contents}
         </div>
     );
     
-    async function populateWeatherData() {
-        const response = await fetch('http://localhost:5029/weatherforecast');
+    async function populateExcavatorData() {
+        const response = await fetch('http://localhost:5029/api/excavator');
         const data = await response.json();
-        setForecasts(data);
+        setExcavators(data);
     }
 }
 

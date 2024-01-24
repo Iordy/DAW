@@ -5,6 +5,7 @@ using DAW_Exam.Server.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DAW_Exam.Server.Contexts;
+using System.Linq;
 
 
 [ApiController]
@@ -51,6 +52,18 @@ public class ExcavatorController : ControllerBase
                 YearOfFabrication = excavator.YearOfFabrication,
 
                 Weight = excavator.Weight,
+
+                ExcavatorType = new ExcavatorTypeDTO
+
+                {
+
+                    Id = excavator.ExcavatorType.Id,
+
+                    Type = excavator.ExcavatorType.Type,
+
+                }
+
+                
 
             };
 

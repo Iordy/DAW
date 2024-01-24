@@ -6,11 +6,11 @@
 }
 
 tr:nth-child(even) {
-    background: #F2F2F2;
+    background: black;
 }
 
 tr:nth-child(odd) {
-    background: #FFF;
+    background: #333;
 }
 
 th, td {

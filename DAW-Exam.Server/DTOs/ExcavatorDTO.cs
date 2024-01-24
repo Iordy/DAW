@@ -17,6 +17,8 @@ namespace DAW_Exam.Server.DTOs
         public int? YearOfFabrication { get; set; }
 
         public int? Weight { get; set; }
+
+        public ExcavatorTypeDTO? ExcavatorType { get; set; }
         
     }
 
