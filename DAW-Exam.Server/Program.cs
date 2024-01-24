@@ -1,3 +1,9 @@
+using DAW_Exam.Server.Contexts;
+using Microsoft.EntityFrameworkCore;
+using DAW_Exam.Server.Entities;
+
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,10 +13,25 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddDbContext<DawContext>(options =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("DAW");
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+});
+
+
 var app = builder.Build();
+
+//cors policy
+app.UseCors(builder => builder
+    .AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader());
 
 app.UseDefaultFiles();
 app.UseStaticFiles();
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
