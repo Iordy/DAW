@@ -12,14 +12,30 @@ namespace DAW_Exam.Server.Contexts
 
         }
 
-        public DbSet<Excavator> Excavators { get; set; }
-        public DbSet<ExcavatorType> ExcavatorTypes { get; set; }
+        public DbSet<Event> Events { get; set; }
+
+        public DbSet<Participant> Participants { get; set; }
+
+        public DbSet<EventAtendee> EventAtendees { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Excavator>().HasOne(e => e.ExcavatorType).WithMany(e => e.Excavators).HasForeignKey(e => e.ExcavatorTypeId);
+            modelBuilder.Entity<EventAtendee>()
+                .HasKey(ea => new { ea.ParticipantId, ea.EventId });
+
+            modelBuilder.Entity<EventAtendee>()
+                .HasOne(ea => ea.Participant)
+                .WithMany(e => e.EventAtendees)
+                .HasForeignKey(ea => ea.ParticipantId);
+
+            modelBuilder.Entity<EventAtendee>()
+                .HasOne(ea => ea.Event)
+                .WithMany(e => e.EventAtendees)
+                .HasForeignKey(ea => ea.EventId);
+
         }
 
     }
