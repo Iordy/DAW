@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import AddEventForm from './Add';
 
 function App() {
     const [events, setEvents] = useState([]);
@@ -67,6 +68,8 @@ function App() {
             <h1 id="tabelLabel">Participants</h1>
             <p>Examen Dezvoltarea Aplicatiilor Web - C# .Net</p>
             {contents2}
+
+            <AddEventForm />
         </div>
     );
     
